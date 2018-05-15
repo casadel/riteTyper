@@ -47,7 +47,11 @@ def report_stats(times):
     N = len(tix) + n
     avg = sum(times) / n
     med = numpy.median(times)
-    if n > 10:
+    try:
+        print '\nn:', n, '\nMEAN:', avg, '\nMEDIAN:', med, '\nN:', N
+    except:
+        print 'wtf!!!!!!'
+    if n > 4:
         gc = pygsheets.authorize(service_file='typingPracticeMeans.json')
         sh = gc.open('riteTyper')
         wks = sh[0]
@@ -75,7 +79,8 @@ def report_stats(times):
             wks.update_cells('I12:J12', [[avg, med]])
         elif sector_str == 'Public Utilities':
             wks.update_cells('I13:J13', [[avg, med]])    
-    print '\nn:', n, '\nMEAN:', avg, '\nMEDIAN:', med, '\nN:', N
+        
+        print 'Check Spreadsheet!'
     
 while True:
     try:

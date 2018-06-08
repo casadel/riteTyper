@@ -32,7 +32,8 @@ for row, index in exc_list_mstr.iterrows():
     sectors = ['Technology', 'Health Care', 'Consumer Services', 'Consumer Non-Durables', 'Miscellaneous', 'Consumer Durables', 'Basic Industries', 'Capital Goods', 'Transportation', 'Energy', 'Finance', 'Public Utilities']
 
     ####Choose sector#######
-    sector_str = sectors[1]
+    inpt = raw_input('Choose Sector!!! (0-Tech, 1-Hlth, 2-Services, 3-Consumer, 4-Misc, 5-Con. Durables, 6-Basic Inds., 7-Cap. Goods, 8-Trans., 9-Energy, 10-Fin., 11-XLU)\n')
+    sector_str = sectors[int(inpt)]
     condition = (industry != 'Precious Metals' and industry != 'Real Estate Investment Trusts' and industry != 'Marine Transportation')
     if carat == False and letters == True and market_cap > 800000000 and market_cap < 35000000000 and sector == sector_str and condition: 
         tix.append((symbol, name))

@@ -47,6 +47,7 @@ def report_stats(times):
     N = len(tix) + n
     avg = sum(times) / n
     med = numpy.median(times)
+    today = datetime.today().strftime('%m/%d/%Y')
     try:
         print '\nn:', n, '\nMEAN:', avg, '\nMEDIAN:', med, '\nN:', N
     except:
@@ -56,29 +57,77 @@ def report_stats(times):
         sh = gc.open('riteTyper')
         wks = sh[0]
         if sector_str == 'Technology':
-            wks.update_cells('I2:J2', [[avg, med]])
+            wks.update_cells('L2:M2', [[avg, med]])
+            wks.update_cell('R2', today)
+            best = wks.cell('N2')
+            if best == None or med < best:
+                wks.update('N2', med)
         elif sector_str == 'Health Care':
-            wks.update_cells('I3:J3', [[avg, med]])
+            wks.update_cells('L3:M3', [[avg, med]])
+            wks.update_cell('R3', today)
+            best = wks.cell('N3')
+            if best == None or med < best:
+                wks.update('N3', med)
         elif sector_str == 'Consumer Services':
-            wks.update_cells('I4:J4', [[avg, med]])
+            wks.update_cells('L4:M4', [[avg, med]])
+            wks.update_cell('R4', today)
+            best = wks.cell('N4')
+            if best == None or med < best:
+                wks.update('N4', med)
         elif sector_str == 'Consumer Non-Durables':
-            wks.update_cells('I5:J5', [[avg, med]])
+            wks.update_cells('L5:M5', [[avg, med]])
+            wks.update_cell('R5', today)
+            best = wks.cell('N5')
+            if best == None or med < best:
+                wks.update('N5', med)
         elif sector_str == 'Miscellaneous':
-            wks.update_cells('I6:J6', [[avg, med]])
+            wks.update_cells('L6:M6', [[avg, med]])
+            wks.update_cell('R6', today)
+            best = wks.cell('N6')
+            if best == None or med < best:
+                wks.update('N6', med)
         elif sector_str == 'Consumer Durables':
-            wks.update_cells('I7:J7', [[avg, med]])
+            wks.update_cells('L7:M7', [[avg, med]])
+            wks.update_cell('R7', today)
+            best = wks.cell('N7')
+            if best == None or med < best:
+                wks.update('N7', med)
         elif sector_str == 'Basic Industries':
-            wks.update_cells('I8:J8', [[avg, med]])
+            wks.update_cells('L8:M8', [[avg, med]])
+            wks.update_cell('R8', today)
+            best = wks.cell('N8')
+            if best == None or med < best:
+                wks.update('N8', med)
         elif sector_str == 'Capital Goods':
-            wks.update_cells('I9:J9', [[avg, med]])
+            wks.update_cells('L9:M9', [[avg, med]])
+            wks.update_cell('R9', today)
+            best = wks.cell('N9')
+            if best == None or med < best:
+                wks.update('N9', med)
         elif sector_str == 'Transportation':
-            wks.update_cells('I10:J10', [[avg, med]])
+            wks.update_cells('L10:M10', [[avg, med]])
+            wks.update_cell('R10', today)
+            best = wks.cell('N10')
+            if best == None or med < best:
+                wks.update('N10', med)
         elif sector_str == 'Energy':
-            wks.update_cells('I11:J11', [[avg, med]])
+            wks.update_cells('L11:M11', [[avg, med]])
+            wks.update_cell('R11', today)
+            best = wks.cell('N11')
+            if best == None or med < best:
+                wks.update('N11', med)
         elif sector_str == 'Finance':
-            wks.update_cells('I12:J12', [[avg, med]])
+            wks.update_cells('L12:M12', [[avg, med]])
+            wks.update_cell('R12', today)
+            best = wks.cell('N12')
+            if best == None or med < best:
+                wks.update('N12', med)
         elif sector_str == 'Public Utilities':
-            wks.update_cells('I13:J13', [[avg, med]])    
+            wks.update_cells('L13:M13', [[avg, med]])
+            wks.update_cell('R13', today)
+            best = wks.cell('N13')
+            if best == None or med < best:
+                wks.update('N13', med)    
         
         print 'Check Spreadsheet!'
     

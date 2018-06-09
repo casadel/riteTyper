@@ -37,7 +37,7 @@ sectors = ['Technology', 'Health Care', 'Consumer Services', 'Consumer Non-Durab
     
 ####Choose sector#######
 inpt = raw_input('Choose Sector!!! (0-Tech, 1-Hlth, 2-Services, 3-Consumer, 4-Misc, 5-Con. Durables, 6-Basic Inds., 7-Cap. Goods, 8-Trans., 9-Energy, 10-Fin., 11-XLU)')
-sector_str = sectors[inpt]
+sector_str = sectors[int(inpt)]
 
 for row, index in exc_list_mstr.iterrows():
     symbol = str(index.Symbol)

@@ -20,7 +20,7 @@ tix = []
 sectors = ['Technology', 'Health Care', 'Consumer Services', 'Consumer Non-Durables', 'Miscellaneous', 'Consumer Durables', 'Basic Industries', 'Capital Goods', 'Transportation', 'Energy', 'Finance', 'Public Utilities']
     
 ####Choose sector#######
-inpt = raw_input('Choose Sector!!! (0-Tech, 1-Hlth, 2-Services, 3-Consumer, 4-Misc, 5-Con. Durables, 6-Basic Inds., 7-Cap. Goods, 8-Trans., 9-Energy, 10-Fin., 11-XLU)')
+inpt = raw_input('Choose Sector!!! (0-Tech, 1-Hlth, 2-Services, 3-Consumer, 4-Misc, 5-Con. Durables, 6-Basic Inds., 7-Cap. Goods, 8-Trans., 9-Energy, 10-Fin., 11-XLU)\n')
 sector_str = sectors[inpt]
 
 for row, index in exc_list_mstr.iterrows():
@@ -59,75 +59,99 @@ def report_stats(times):
         if sector_str == 'Technology':
             wks.update_cells('F2:G2', [[avg, med]])
             wks.update_cell('P2', today)
-            best = wks.cell('H2')
-            if best == None or med < best:
-                wks.update('H2', med)
+            best = wks.cell('H2').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H2', med)
         elif sector_str == 'Health Care':
             wks.update_cells('F3:G3', [[avg, med]])
             wks.update_cell('P3', today)
-            best = wks.cell('H3')
-            if best == None or med < best:
-                wks.update('H3', med)
+            best = wks.cell('H3').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H3', med)
         elif sector_str == 'Consumer Services':
             wks.update_cells('F4:G4', [[avg, med]])
             wks.update_cell('P4', today)
-            best = wks.cell('H4')
-            if best == None or med < best:
-                wks.update('H4', med)
+            best = wks.cell('H4').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H4', med)
         elif sector_str == 'Consumer Non-Durables':
             wks.update_cells('F5:G5', [[avg, med]])
             wks.update_cell('P5', today)
-            best = wks.cell('H5')
-            if best == None or med < best:
-                wks.update('H5', med)
+            best = wks.cell('H5').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H5', med)
         elif sector_str == 'Miscellaneous':
             wks.update_cells('F6:G6', [[avg, med]])
             wks.update_cell('P6', today)
-            best = wks.cell('H6')
-            if best == None or med < best:
-                wks.update('H6', med)
+            best = wks.cell('H6').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H6', med)
         elif sector_str == 'Consumer Durables':
             wks.update_cells('F7:G7', [[avg, med]])
             wks.update_cell('P7', today)
-            best = wks.cell('H7')
-            if best == None or med < best:
-                wks.update('H7', med)
+            best = wks.cell('H7').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H7', med)
         elif sector_str == 'Basic Industries':
             wks.update_cells('F8:G8', [[avg, med]])
             wks.update_cell('P8', today)
-            best = wks.cell('H8')
-            if best == None or med < best:
-                wks.update('H8', med)
+            best = wks.cell('H8').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H8', med)
         elif sector_str == 'Capital Goods':
             wks.update_cells('F9:G9', [[avg, med]])
             wks.update_cell('P9', today)
-            best = wks.cell('H9')
-            if best == None or med < best:
-                wks.update('H9', med)
+            best = wks.cell('H9').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H9', med)
         elif sector_str == 'Transportation':
             wks.update_cells('F10:G10', [[avg, med]])
             wks.update_cell('P10', today)
-            best = wks.cell('H10')
-            if best == None or med < best:
-                wks.update('H10', med)
+            best = wks.cell('H10').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H10', med)
         elif sector_str == 'Energy':
             wks.update_cells('F11:G11', [[avg, med]])
             wks.update_cell('P11', today)
-            best = wks.cell('H11')
-            if best == None or med < best:
-                wks.update('H11', med)
+            best = wks.cell('H11').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H11', med)
         elif sector_str == 'Finance':
             wks.update_cells('F12:G12', [[avg, med]])
             wks.update_cell('P12', today)
-            best = wks.cell('H12')
-            if best == None or med < best:
-                wks.update('H12', med)
+            best = wks.cell('H12').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H12', med)
         elif sector_str == 'Public Utilities':
             wks.update_cells('F13:G13', [[avg, med]])
             wks.update_cell('P13', today)
-            best = wks.cell('H13')
-            if best == None or med < best:
-                wks.update('H13', med)    
+            best = wks.cell('H13').value
+            if best=='':
+                best = 100.0
+            if float(best) > med:
+                wks.update_cell('H13', med)    
 
     
 while True:
